@@ -1,0 +1,251 @@
+/* assets/style.css */
+:root {
+  --bg: #dce2f0;
+  /* slate-900 */
+  --card: #111827;
+  /* gray-900 */
+  --text: #e5e7eb;
+  /* gray-200 */
+  --accent: #22c55e;
+  /* green-500 */
+  --danger: #ef4444;
+  /* red-500 */
+  --muted: #94a3b8;
+  /* slate-400 */
+}
+
+* {
+  box-sizing: border-box
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu;
+  background: linear-gradient(135deg, #2c2d2b9a, #4875d5);
+  color: var(--text);
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: min(720px, 92vw);
+  background: linear-gradient(180deg, rgba(126, 125, 219, 0.04), rgba(182, 181, 239, 0.02));
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .35);
+  backdrop-filter: blur(6px);
+}
+
+h1,
+h2 {
+  margin: 0 0 14px
+}
+
+h1 {
+  font-size: 28px
+}
+
+h2 {
+  font-size: 20px;
+  color: var(--muted);
+  font-weight: 500
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px
+}
+
+.form-grid .full {
+  grid-column: 1/-1
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .15);
+  background: #0b1224;
+  color: var(--text);
+  outline: none;
+  transition: .2s;
+}
+
+input::placeholder {
+  color: #94a3b8
+}
+
+input:focus,
+select:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, .25)
+}
+
+.invalid {
+  border-color: var(--danger) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, .20) !important
+}
+
+.msg {
+  margin: 12px 0 0;
+  font-size: 14px
+}
+
+.msg.error {
+  color: #fecaca
+}
+
+.msg.success {
+  color: #bbf7d0
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-weight: 600
+}
+
+.btn-primary {
+  background: var(--accent)
+}
+
+/* .btn-ghost{  background-color: #4fea12; border:5px solid rgba(239, 7, 7, 0.16)} */
+.link {
+  color: #93c5fd;
+  text-decoration: none
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px
+}
+
+.logo img {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, .2)
+}
+
+.small {
+  font-size: 12px;
+  color: var(--muted)
+}
+
+/* Dashboard */
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh
+}
+
+.sidebar {
+  background: #0b1224;
+  border-right: 1px solid rgba(255, 255, 255, .08);
+  padding: 18px;
+}
+
+.nav a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--text);
+  text-decoration: none;
+  margin-bottom: 8px;
+  border: 1px solid transparent;
+}
+
+.nav a:hover {
+  background: rgba(255, 255, 255, .05);
+  border-color: rgba(255, 255, 255, .08)
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, .08)
+}
+
+.content {
+  padding: 22px
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse
+}
+
+.table td,
+.table th {
+  border-bottom: 1px solid rgba(230, 17, 31, 0.08);
+  padding: 10px
+}
+
+input.error {
+  border: 2px solid red;
+  /* background: #f88787; */
+  color: red;
+}
+
+.error-text {
+  color: red (--denger);
+  font-size: 12px;
+}
+
+
+.btn-ghost {
+  background-color: #ef4444;
+  /* red background */
+  color: white;
+  /* text white for contrast */
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-ghost:hover {
+  background-color: #dc2626;
+  /* darker red on hover */
+}
+
+.card h2 {
+  color: black;
+  font-size: 30px;
+}
+
+.small {
+  color: #0b1224;
+  /* font-weight: 10px; */
+  font-size: 20px;
+}
+.acard{
+    width: min(720px, 92vw);
+  background: linear-gradient(180deg, rgba(126, 125, 219, 0.04), rgba(182, 181, 239, 0.02));
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .35);
+  backdrop-filter: blur(6px);
+
+}
