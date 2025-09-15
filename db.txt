@@ -1,0 +1,103 @@
+-- Database create
+CREATE DATABASE school_portal;
+ USE school_portal;
+-- ALTER TABLE students
+-- ADD COLUMN class VARCHAR(50) NOT NULL AFTER mobile,
+-- ADD COLUMN roll_no INT NOT NULL AFTER class
+
+
+
+
+--  ALTER TABLE admins 
+-- ADD COLUMN reset_code VARCHAR(6) DEFAULT NULL,
+-- ADD COLUMN reset_expiry DATETIME DEFAULT NULL;
+
+--  SHOW COLUMNS FROM students;
+-- SHOW CREATE TABLE students;
+--  SHOW COLUMNS FROM results;
+
+
+
+
+
+CREATE TABLE students_record (
+   id INT AUTO_INCREMENT PRIMARY KEY,
+    std_id INT NOT NULL UNIQUE,
+    student_name VARCHAR(100) NOT NULL,
+    father_name VARCHAR(100) NOT NULL,
+    mother_name VARCHAR(100) NOT NULL,
+    dob DATE NOT NULL,
+    doa DATE NOT NULL,
+    class VARCHAR(50) NOT NULL,
+    roll_no VARCHAR(50) NOT NULL,
+    created_by INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    
+);
+
+CREATE TABLE results (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    std_id INT NOT NULL,
+    class VARCHAR(50) NOT NULL,
+    roll_no VARCHAR(50) NOT NULL,
+    file_path VARCHAR(255) NOT NULL,
+    uploaded_by INT NOT NULL,
+    uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    
+);
+
+CREATE TABLE videos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    class VARCHAR(50) NOT NULL,
+    file_path VARCHAR(255) NOT NULL,
+    uploaded_by INT NOT NULL,
+    uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- Admins table
+ CREATE TABLE Admission_Form (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+   
+     studentname VARCHAR(50) NOT NULL,
+     fathername VARCHAR(50) not null,
+     mothername VARCHAR(50) NOT NULL,
+    gender ENUM('Male','Female','Other') NOT NULL,
+		dob DATE NOT NULL,
+     class VARCHAR(15) NOT NULL,
+     roll_no VARCHAR(15) NOT NULL,
+     email VARCHAR(100) UNIQUE NOT NULL,
+     phone_number VARCHAR(10) NOT NULL
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Students table
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id VARCHAR(20) UNIQUE NOT NULL, -- e.g. STU20250001
+    firstname VARCHAR(50) NOT NULL,
+    middlename VARCHAR(50),
+    lastname VARCHAR(50) NOT NULL,
+    gender ENUM('Male','Female','Other') NOT NULL,
+    mobile VARCHAR(15) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Schools table
+CREATE TABLE schools (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    school_id VARCHAR(20) UNIQUE NOT NULL,  -- user enters unique school code
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
