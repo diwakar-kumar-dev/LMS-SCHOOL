@@ -1,3 +1,44 @@
+USE school_portal;
+ALTER TABLE students 
+ADD COLUMN school_id INT NOT NULL AFTER id;
+
+-- CREATE DATABASE IF NOT EXISTS school_portal;
+-- USE school_portal;
+
+-- -- Admin Users (if not already)
+-- CREATE TABLE IF NOT EXISTS admin_users (
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     name VARCHAR(100) NOT NULL,
+--     email VARCHAR(150) NOT NULL UNIQUE,
+--     password VARCHAR(255) NOT NULL,
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- -- Schools list
+-- CREATE TABLE IF NOT EXISTS school_list (
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     school_name VARCHAR(150) NOT NULL,
+--     school_code VARCHAR(50) NOT NULL UNIQUE,
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- Student list
+-- CREATE TABLE IF NOT EXISTS student_list (
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     school_id INT NOT NULL,
+--     firstname VARCHAR(100) NOT NULL,
+--     middlename VARCHAR(100),
+--     lastname VARCHAR(100) NOT NULL,
+--     roll_no VARCHAR(50) NOT NULL,
+--     class VARCHAR(50) NOT NULL,
+--     email VARCHAR(150),
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     FOREIGN KEY (school_id) REFERENCES school_list(id) ON DELETE CASCADE
+-- );
+
+
+
+
 -- Database create
 CREATE DATABASE school_portal;
  USE school_portal;
@@ -100,4 +141,5 @@ CREATE TABLE schools (
     username VARCHAR(50) UNIQUE NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
 );
