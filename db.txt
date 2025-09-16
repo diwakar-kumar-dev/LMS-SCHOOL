@@ -143,3 +143,4 @@ CREATE TABLE schools (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 );
+
