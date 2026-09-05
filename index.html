@@ -1,0 +1,28 @@
+<?php session_start(); ?>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>LMS SCHOOL</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="logo">
+        <img src="school img_logo.jpg" alt="School Logo" onerror="this.style.visibility='hidden'">
+        <h1 class="school-name">LMS SCHOOL</h1>
+      </div>
+
+      <h2>Choose Login</h2>
+
+      <div class="actions">
+        <button class="btn-primary" onclick="location.href='admin_login.php'">Admin Login</button>
+        <button class="btn-primary" onclick="location.href='school_login.php'">School Login</button>
+        <button class="btn-primary" onclick="location.href='student_login.php'">Student Login</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
